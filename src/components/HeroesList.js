@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
 
 class HeroesList extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   renderTBody(){
     return(
       <tbody>
-        {this.props.heroList != '' ? this.props.heroList.map(item=>(
-          <tr key={item.id}>
+        {
+          this.props.heroList.length !== 0 ? this.props.heroList.map((item, index)=>(
+          <tr key={index}>
             <td>{item.ID}</td>
             <td>{item.Name}</td>
             <td>{item.HP}</td>
           </tr>
         )): 'Wait'}
-        <tr>
-          <td></td>
-        </tr>
       </tbody>
     )
   }
 
   render(){
-    console.log(this.props.heroList[0]);
     return (
       <div>
         <table>
@@ -40,6 +33,5 @@ class HeroesList extends Component {
     )
   }
 }
-
 
 export default HeroesList

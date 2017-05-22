@@ -16,7 +16,7 @@ class App extends Component {
     .then(response=>{
       let newData = this.state.herolist
       Object.keys(response.data).map(function(key, index) {
-         newData.push(response.data[key]);
+        return newData.push(response.data[key]);
       });
       this.setState({herolist: newData})
     })
@@ -33,7 +33,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <ListHeroes heroList={this.state.herolist}/>
+        <ListHeroes heroList={this.state.herolist}  />
       </div>
     );
   }
